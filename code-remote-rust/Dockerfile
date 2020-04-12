@@ -13,6 +13,8 @@ RUN mkdir /run/sshd
 RUN useradd -u 1500 -m -g users -G sudo brycemclachlan
 WORKDIR /home/brycemclachlan
 ADD id_rsa.pub /home/brycemclachlan/.ssh/id_rsa.pub
+ADD sshd_config /etc/ssh/sshd_config
+RUN chown -R root /etc/ssh/sshd_config
 RUN chown -R brycemclachlan ./.ssh
 RUN chmod 700 -R ./.ssh
 EXPOSE 22/tcp
