@@ -8,14 +8,12 @@ RUN ./configure --enable-optimizations
 RUN make altinstall  
 RUN python3.8 -V
 WORKDIR /
-RUN rm -rf Python-3.8.2 python
+RUN rm -rf Python-3.8.2
 RUN mkdir /run/sshd
 RUN useradd -u 1500 -m -g users -G sudo brycemclachlan
 WORKDIR /home/brycemclachlan
 ADD id_rsa.pub /home/brycemclachlan/.ssh/id_rsa.pub
-USER brycemclachlan
 RUN chown -R brycemclachlan ~/.ssh
 RUN chmod 700 -R ~/.ssh
-USER root
 EXPOSE 22/tcp
 ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
