@@ -5,7 +5,8 @@ ADD https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz python
 RUN tar xzf python
 RUN cd python
 RUN ./configure --enable-optimizations
-RUN make altinstall && python3.8 -V
+RUN make altinstall  
+RUN python3.8 -V
 RUN cd ..
 RUN rm -r python
 ENTRYPOINT  ["openssh-server"]
