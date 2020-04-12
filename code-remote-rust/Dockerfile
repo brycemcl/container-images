@@ -10,4 +10,6 @@ RUN make altinstall
 RUN python3.8 -V
 WORKDIR /
 RUN rm -rf Python-3.8.2
-ENTRYPOINT  ["/usr/sbin/sshd"]
+RUN mkdir /run/sshd
+RUN useradd -u 1500 -m -g users -G sudo brycemclachlan
+ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
