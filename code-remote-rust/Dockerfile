@@ -6,5 +6,6 @@ RUN tar xzf python
 RUN cd python
 RUN ./configure --enable-optimizations
 RUN make altinstall && python3.8 -V
-RUN cd .. && rm -fR python
+RUN cd ..
+RUN rm -r python
 ENTRYPOINT  ["openssh-server"]
