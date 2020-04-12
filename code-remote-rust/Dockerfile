@@ -3,7 +3,6 @@ RUN  apt-get install -yq --no-install-recommends ca-certificates curl openssh-se
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --profile complete
 WORKDIR /
 ADD Python-3.8.2.tgz .
-RUN tar xzf Python-3.8.2.tgz
 WORKDIR /Python-3.8.2
 RUN ./configure --enable-optimizations
 RUN make altinstall  
