@@ -12,7 +12,8 @@ RUN rm -rf Python-3.8.2
 RUN mkdir /run/sshd
 RUN useradd -u 1500 -m -g users -G sudo brycemclachlan
 WORKDIR /home/brycemclachlan
-ADD id_rsa.pub /home/brycemclachlan/.ssh/id_rsa.pub
+ADD id_rsa.pub /home/brycemclachlan/.ssh/authorized_keys
+RUN mv /home/brycemclachlan/.ssh/id_rsa.pub /home/brycemclachlan/.ssh/authorized_keys
 ADD sshd_config /etc/ssh/sshd_config
 RUN chown -R root /etc/ssh/sshd_config
 RUN chown -R brycemclachlan ./.ssh
