@@ -3,10 +3,10 @@ RUN  apt-get install -yq --no-install-recommends ca-certificates curl openssh-se
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --profile complete
 ADD https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz python
 RUN tar xzf python
-RUN cd python
+WORKDIR /python
 RUN ./configure --enable-optimizations
 RUN make altinstall  
 RUN python3.8 -V
-RUN cd ..
+WORKDIR /
 RUN rm -r python
 ENTRYPOINT  ["openssh-server"]
