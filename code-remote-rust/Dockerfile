@@ -19,8 +19,8 @@ RUN chown -R brycemclachlan ./.ssh
 RUN chmod 700 -R ./.ssh
 RUN usermod --shell /bin/bash brycemclachlan
 RUN  echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-FROM scratch AS release
-COPY --from=build / /
+#FROM scratch AS release
+#COPY --from=build / /
 EXPOSE 22/tcp
 ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
 
