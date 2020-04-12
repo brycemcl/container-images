@@ -23,3 +23,6 @@ FROM scratch AS release
 COPY --from=build / /
 EXPOSE 22/tcp
 ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
+
+##podman run -p 44747:22 --name ssh
+##podman kill ssh && podman rm ssh
