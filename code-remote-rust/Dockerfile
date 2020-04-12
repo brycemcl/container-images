@@ -12,4 +12,5 @@ WORKDIR /
 RUN rm -rf Python-3.8.2
 RUN mkdir /run/sshd
 RUN useradd -u 1500 -m -g users -G sudo brycemclachlan
+EXPOSE 22/tcp
 ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
