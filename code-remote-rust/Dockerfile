@@ -10,4 +10,4 @@ RUN make altinstall
 RUN python3.8 -V
 WORKDIR /
 RUN rm -rf Python-3.8.2
-ENTRYPOINT  ["openssh-server"]
+ENTRYPOINT  ["/usr/sbin/sshd"]
