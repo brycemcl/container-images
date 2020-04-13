@@ -19,10 +19,11 @@ RUN chown -R brycemclachlan ./.ssh
 RUN chmod 700 -R ./.ssh
 RUN usermod --shell /bin/bash brycemclachlan
 RUN  echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-#FROM scratch AS release
-#COPY --from=build / /
+RUN touch /scratch.tar.gz && tar --exclude-from="/scratch.tar.gz" --one-file-system --xattrs -czpf /scratch.tar.gz /
+FROM scratch AS release
+ADD --from=build /scratch.tar.gz /
 EXPOSE 22/tcp
 ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
 
-##podman run -p 44747:22 --name ssh
+##podman run -p 44747:22 --name ssh brycemclachlan/code-remote-rust
 ##podman kill ssh && podman rm ssh
