@@ -19,9 +19,11 @@ RUN chown -R brycemclachlan ./.ssh
 RUN chmod 700 -R ./.ssh
 RUN usermod --shell /bin/bash brycemclachlan
 RUN  echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-RUN touch /scratch.tar.gz && tar --exclude-from="/scratch.tar.gz" --one-file-system --xattrs -czpf /scratch.tar.gz /
+WORKDIR /
+RUN touch ./scratch.tar.gz
+RUN  tar --exclude=./scratch.tar.gz --exclude=./sys/ --one-file-system -cvzpf ./scratch.tar.gz ./ ; exit 0
 FROM scratch AS release
-ADD --from=build /scratch.tar.gz /
+COPY --from=build /scratch.tar.gz /
 EXPOSE 22/tcp
 ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
 
