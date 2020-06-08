@@ -23,10 +23,15 @@ RUN  echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 EXPOSE 22/tcp
 ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
 
-##podman run -p 44747:22 --name ssh brycemclachlan/code-remote-rust
-##podman kill ssh && podman rm ssh
-
+##podman
 RUN sh -c "echo 'deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/ /' > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
 RUN curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/Release.key | sudo apt-key add -
 RUN apt-get update -qq
 RUN apt-get -qq -y install podman
+##kube
+RUN apt-get install -y --no-install-recommends ca-certificates apt-transport-https curl gnupg2 && \
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list && \
+apt-get update 
+## && \
+RUN apt-get install -y  --no-install-recommends kubectl
