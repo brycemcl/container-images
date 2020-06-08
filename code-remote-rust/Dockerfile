@@ -12,6 +12,7 @@ RUN rm -rf Python-3.8.2
 RUN mkdir /run/sshd
 RUN useradd -u 1500 -m -g users -G sudo brycemclachlan
 WORKDIR /home/brycemclachlan
+
 ADD id_rsa.pub /home/brycemclachlan/.ssh/authorized_keys
 ADD sshd_config /etc/ssh/sshd_config
 RUN chown -R root /etc/ssh/sshd_config
@@ -24,3 +25,8 @@ ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
 
 ##podman run -p 44747:22 --name ssh brycemclachlan/code-remote-rust
 ##podman kill ssh && podman rm ssh
+
+RUN sh -c "echo 'deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/ /' > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
+RUN curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/Release.key | sudo apt-key add -
+RUN apt-get update -qq
+RUN apt-get -qq -y install podman
