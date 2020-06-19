@@ -1,5 +1,6 @@
 FROM brycemclachlan/base-ubuntu:latest AS base
 FROM base as build
+RUN apt-get update
 RUN apt-get install -y flex bison build-essential wget
 COPY ./tar .
 ENV MLVPN_VERSION=2.3.5
