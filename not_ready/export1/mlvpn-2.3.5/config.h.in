@@ -1,0 +1,208 @@
+/* config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* remote control system (cli and http) */
+#undef ENABLE_CONTROL
+
+/* libpcap support for filters */
+#undef ENABLE_FILTERS
+
+/* OpenBSD's gcc has bounded */
+#undef HAVE_ATTRIBUTE__BOUNDED__
+
+/* OpenBSD's gcc has sentinel */
+#undef HAVE_ATTRIBUTE__SENTINEL__
+
+/* BSD */
+#undef HAVE_BSD
+
+/* Define to 1 if you have the `closefrom' function. */
+#undef HAVE_CLOSEFROM
+
+/* DARWIN */
+#undef HAVE_DARWIN
+
+/* Define to 1 if you have the declaration of `res_init', and to 0 if you
+   don't. */
+#undef HAVE_DECL_RES_INIT
+
+/* Define to 1 if you have the <dirent.h> header file. */
+#undef HAVE_DIRENT_H
+
+/* Define to 1 if you have the <ev.h> header file. */
+#undef HAVE_EV_H
+
+/* Define to 1 if you have the <fcntl.h> header file. */
+#undef HAVE_FCNTL_H
+
+/* filters enabled */
+#undef HAVE_FILTERS
+
+/* FreeBSD */
+#undef HAVE_FREEBSD
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* ev_time in -lev */
+#undef HAVE_LIBEV
+
+/* Define to 1 if you have the `resolv' library (-lresolv). */
+#undef HAVE_LIBRESOLV
+
+/* sodium_init in -lsodium */
+#undef HAVE_LIBSODIUM
+
+/* Linux */
+#undef HAVE_LINUX
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the <ndir.h> header file. */
+#undef HAVE_NDIR_H
+
+/* NetBSD */
+#undef HAVE_NETBSD
+
+/* OpenBSD */
+#undef HAVE_OPENBSD
+
+/* Define to 1 if you have the <pcap.h> header file. */
+#undef HAVE_PCAP_H
+
+/* Define to 1 if you have the `pledge' function. */
+#undef HAVE_PLEDGE
+
+/* Define to 1 if you have the `setproctitle' function. */
+#undef HAVE_SETPROCTITLE
+
+/* Define to 1 if you have the `setresgid' function. */
+#undef HAVE_SETRESGID
+
+/* Define to 1 if you have the `setresuid' function. */
+#undef HAVE_SETRESUID
+
+/* Define to 1 if you have the <sodium.h> header file. */
+#undef HAVE_SODIUM_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the `strlcat' function. */
+#undef HAVE_STRLCAT
+
+/* Define to 1 if you have the `strlcpy' function. */
+#undef HAVE_STRLCPY
+
+/* Define to 1 if you have the `strnvis' function. */
+#undef HAVE_STRNVIS
+
+/* Define to 1 if you have the `sysconf' function. */
+#undef HAVE_SYSCONF
+
+/* Define to 1 if you have the <sys/dir.h> header file. */
+#undef HAVE_SYS_DIR_H
+
+/* Define to 1 if you have the <sys/ndir.h> header file. */
+#undef HAVE_SYS_NDIR_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to 1 if you have the <valgrind/valgrind.h> header file. */
+#undef HAVE_VALGRIND_VALGRIND_H
+
+/* Define to 1 if you have the `vsnprintf' function. */
+#undef HAVE_VSNPRINTF
+
+/* install example files */
+#undef INSTALL_EXAMPLES
+
+/* compiler does not accept __attribute__ on return types */
+#undef NO_ATTRIBUTE_ON_RETURN_TYPE
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Directory for systemd generators */
+#undef SYSTEMDSYSTEMGENERATORDIR
+
+/* Directory for systemd service files */
+#undef SYSTEMDSYSTEMUNITDIR
+
+/* Directory for systemd tmpfiles */
+#undef SYSTEMDTMPFILESDIR
+
+/* Enable extensions on AIX 3, Interix.  */
+#ifndef _ALL_SOURCE
+# undef _ALL_SOURCE
+#endif
+/* Enable GNU extensions on systems that have them.  */
+#ifndef _GNU_SOURCE
+# undef _GNU_SOURCE
+#endif
+/* Enable threading extensions on Solaris.  */
+#ifndef _POSIX_PTHREAD_SEMANTICS
+# undef _POSIX_PTHREAD_SEMANTICS
+#endif
+/* Enable extensions on HP NonStop.  */
+#ifndef _TANDEM_SOURCE
+# undef _TANDEM_SOURCE
+#endif
+/* Enable general extensions on Solaris.  */
+#ifndef __EXTENSIONS__
+# undef __EXTENSIONS__
+#endif
+
+
+/* Version number of package */
+#undef VERSION
+
+/* Define to 1 if on MINIX. */
+#undef _MINIX
+
+/* Define to 2 if the system does not provide POSIX.1 features except with
+   this defined. */
+#undef _POSIX_1_SOURCE
+
+/* Define to 1 if you need to in order for `stat' and other things to work. */
+#undef _POSIX_SOURCE
+
+/* Enable BSD extensions */
+#undef __USE_BSD
