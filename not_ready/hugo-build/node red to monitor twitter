@@ -1,0 +1,7 @@
+node red to monitor twitter
+grabber to download videos
+audfprint to fingerprint audio
+sort based off mentions of locations
+s3 for website with cloudflare in front
+b2 with cloudflare in front for assets
+p2p-media-loader-shaka
