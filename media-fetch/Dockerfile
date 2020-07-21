@@ -1,7 +1,7 @@
 FROM brycemclachlan/base-ubuntu:latest AS base
 
 FROM base 
-RUN apt-get install --no-install-recommends -y aria2 wget python3 python-is-python3 ca-certificates
+RUN apt-get update && apt-get install --no-install-recommends -y aria2 wget python3 python-is-python3 ca-certificates
 RUN wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && chmod a+rx /usr/local/bin/youtube-dl
 COPY --from=jrottenberg/ffmpeg:snapshot-scratch / /
 RUN mkdir /download
