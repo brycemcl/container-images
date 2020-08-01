@@ -12,12 +12,12 @@ LOCAL_DIR=$3
 
 cp /netrc/.netrc /root/.netrc
 
-lftp -v <<EOF
+lftp <<EOF
 set cmd:default-protocol sftp
 set sftp:auto-confirm yes
 set cmd:interactive no
 open $HOST
 cd $REMOTE_DIR
-mirror -e -c -P2 --use-pget-n=5 ./ $LOCAL_DIR
+mirror -v -e -c -P2 --use-pget-n=5 ./ $LOCAL_DIR
 exit
 EOF
