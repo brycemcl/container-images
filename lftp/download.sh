@@ -10,7 +10,8 @@ HOST=$1
 REMOTE_DIR=$2
 LOCAL_DIR=$3
 
-sleep 5
+cp /netrc/.netrc /root/.netrc
+
 lftp <<EOF
 set cmd:default-protocol sftp
 set sftp:auto-confirm yes
