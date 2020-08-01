@@ -12,7 +12,7 @@ LOCAL_DIR=$3
 
 cp /netrc/.netrc /root/.netrc
 
-lftp <<EOF
+lftp -v <<EOF
 set cmd:default-protocol sftp
 set sftp:auto-confirm yes
 set cmd:interactive no
