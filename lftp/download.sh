@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 LFTP_HOME=/root/
 
