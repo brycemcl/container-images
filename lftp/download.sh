@@ -17,6 +17,6 @@ set sftp:auto-confirm yes
 set cmd:interactive no
 open $HOST
 cd $REMOTE_DIR
-mirror -c -P2 --use-pget-n=5 ./ $LOCAL_DIR
+mirror -e -c -P2 --use-pget-n=5 ./ $LOCAL_DIR
 exit
 EOF
