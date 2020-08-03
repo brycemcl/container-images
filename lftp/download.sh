@@ -15,6 +15,8 @@ cp /netrc/.netrc /root/.netrc
 lftp <<EOF
 set cmd:default-protocol sftp
 set sftp:auto-confirm yes
+set xfer:use-temp-file yes
+xfer:temp-file-name *.temp
 set cmd:interactive no
 open $HOST
 cd $REMOTE_DIR
