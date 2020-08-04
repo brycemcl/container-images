@@ -16,6 +16,7 @@ lftp <<EOF
 set cmd:default-protocol sftp
 set sftp:auto-confirm yes
 set xfer:use-temp-file yes
+set xfer:timeout 30
 set cmd:interactive no
 open $HOST
 cd $REMOTE_DIR
