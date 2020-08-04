@@ -13,7 +13,7 @@ LOCAL_DIR=$3
 cp /netrc/.netrc /root/.netrc
 
 lftp <<EOF
-set cmd:default-protocol sftp
+set cmd:default-protocol ftp
 set sftp:auto-confirm yes
 set xfer:use-temp-file yes
 set xfer:timeout 30
