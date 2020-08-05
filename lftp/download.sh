@@ -16,13 +16,10 @@ lftp <<EOF
 set cmd:default-protocol ftp
 set sftp:auto-confirm yes
 set xfer:use-temp-file yes
+set xfer:timeout 60
 set cmd:interactive no
 open $HOST
 cd $REMOTE_DIR
 mirror -v -e -c -P2 --use-pget-n=5 ./ $LOCAL_DIR
 exit
 EOF
-
-
-#mirror -v -e -c -P1 ./ $LOCAL_DIR
-#mirror -v -e -c -P2 --use-pget-n=5 ./ $LOCAL_DIR
