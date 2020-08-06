@@ -13,7 +13,7 @@ LOCAL_DIR=$3
 cp /netrc/.netrc /root/.netrc
 
 lftp <<EOF
-set cmd:default-protocol ftp
+set cmd:default-protocol sftp
 set sftp:auto-confirm yes
 set xfer:use-temp-file yes
 set xfer:timeout 60
@@ -21,6 +21,8 @@ set cmd:interactive no
 set pget:min-chunk-size 50m
 open $HOST
 cd $REMOTE_DIR
-mirror -v -e --parallel=2 --use-pget-n=5 ./ $LOCAL_DIR
+mirror -v -e -c --parallel=4 ./ $LOCAL_DIR
 exit
 EOF
+
+#mirror -v -e --parallel=2 --use-pget-n=5 ./ $LOCAL_DIR
