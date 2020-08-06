@@ -18,8 +18,9 @@ set sftp:auto-confirm yes
 set xfer:use-temp-file yes
 set xfer:timeout 60
 set cmd:interactive no
+set pget:min-chunk-size 50m
 open $HOST
 cd $REMOTE_DIR
-mirror -v -e -c -P2 --use-pget-n=5 ./ $LOCAL_DIR
+mirror -v -e -c --parallel=2 --use-pget-n=5 ./ $LOCAL_DIR
 exit
 EOF
